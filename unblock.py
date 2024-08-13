@@ -97,11 +97,16 @@ for block in block_data:
     # Avoid rate limit
     if unblocked_count % 80 == 0:
         current_time = datetime.now().strftime("%H:%M:%S")
-        print(f"{current_time}| Taking a 10-minute break...")
-        if unblocked_count == 80:
-            print("This is a necessary cooldown to avoid X rate limit.")
         driver.get("https://x.com/settings/account")
-        time.sleep(600)
+        if unblocked_count % 160 == 0:
+            print(f"{current_time}| Taking a 15-minute break...")
+            time.sleep(900)
+        else:
+            print(f"{current_time}| Taking a 10-minute break...")
+                if unblocked_count == 80:
+                print("This is a necessary cooldown to avoid X rate limit.")
+            time.sleep(600)
+
 
 driver.quit()
 print(f"Unblocked {unblocked_count} users.")
