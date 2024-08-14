@@ -101,10 +101,9 @@ for block in block_data:
         if unblocked_count == 80:
             print(f"{current_time}| Taking a 10-minute break...")
             print("This is a necessary cooldown to avoid X rate limit.")
-            time.sleep(600)
         else:
             print(f"{current_time}| Taking a 15-minute break...")
-            time.sleep(900)
+        time.sleep(900)
 
 
 driver.quit()
