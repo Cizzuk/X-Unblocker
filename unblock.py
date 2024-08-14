@@ -98,11 +98,9 @@ for block in block_data:
     if unblocked_count % 80 == 0:
         current_time = datetime.now().strftime("%H:%M:%S")
         driver.get("https://x.com/settings/account")
+        print(f"{current_time}| Taking a 15-minute break...")
         if unblocked_count == 80:
-            print(f"{current_time}| Taking a 10-minute break...")
             print("This is a necessary cooldown to avoid X rate limit.")
-        else:
-            print(f"{current_time}| Taking a 15-minute break...")
         time.sleep(900)
 
 
